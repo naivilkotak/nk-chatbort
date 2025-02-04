@@ -1,0 +1,148 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;  /* Make sure the background image covers the whole screen */
+    background-position: center; /* Center the image */
+    background-image: url('ai-bot.png'), linear-gradient(135deg, #ff7e5f, #feb47b); /* Background image + gradient */
+    background-blend-mode: overlay; /* Overlay the image with the gradient */
+    animation: gradientAnimation 10s ease infinite; /* Apply animation for gradient transition */
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    }
+    50% {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+    100% {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    }
+  }
+  
+  .chat-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for the chat container */
+    width: 450px;
+    height: 600px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    max-height: 80%;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin: 10px 10px 10px 20px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .user-msg {
+    text-align: right;
+    background-color: #0084ff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    margin-left: auto;
+    animation: slideInRight 0.5s ease-out;
+  }
+  
+  .bot-msg {
+    text-align: left;
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    animation: slideInLeft 0.5s ease-out;
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Typing animation */
+  .typing-effect {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #0084ff;
+    animation: typing 2s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blinkCaret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
